@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">মিজান সার্ভিস সেন্টার</string>
+    <string name="settings">সেটিংস</string>
+    <string name="about">আমাদের সম্পর্কে</string>
+    <string name="privacy_policy">গোপনীয়তা নীতি</string>
+    <string name="contact">যোগাযোগ করুন</string>
+    <string name="enable_notifications">নোটিফিকেশন চালু করুন</string>
+    <string name="app_lock">অ্যাপ লক (বায়োমেট্রিক্স)</string>
+    <string name="clear_cache">ক্যাশে পরিষ্কার করুন</string>
+    <string name="exit_confirmation">আপনি কি নিশ্চিত যে আপনি প্রস্থান করতে চান?</string>
+    <string name="yes">হ্যাঁ</string>
+    <string name="no">না</string>
+    <string name="retry">পুনরায় চেষ্টা করুন</string>
+    <string name="offline_title">ইন্টারনেট সংযোগ নেই</string>
+    <string name="offline_desc">দয়া করে আপনার নেটওয়ার্ক সেটিংস চেক করুন এবং আবার চেষ্টা করুন।</string>
+</resources>

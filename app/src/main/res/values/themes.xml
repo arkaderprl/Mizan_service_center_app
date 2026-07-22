@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <!-- Set the splash screen background, animated icon, and animation duration. -->
+        <item name="windowSplashScreenBackground">@color/splash_bg</item>
+        <!-- Use clear colors or a drawable for the icon -->
+        <item name="windowSplashScreenAnimatedIcon">@android:drawable/ic_menu_directions</item>
+        <!-- The theme to use after the splash screen finishes -->
+        <item name="postSplashScreenTheme">@android:style/Theme.NoTitleBar</item>
+    </style>
+    
+    <color name="splash_bg">#FF6650A4</color>
+</resources>

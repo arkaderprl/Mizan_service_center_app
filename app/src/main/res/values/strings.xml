@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mizan Service Center</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="contact">Contact Us</string>
+    <string name="enable_notifications">Enable Notifications</string>
+    <string name="app_lock">App Lock (Biometrics)</string>
+    <string name="clear_cache">Clear Cache</string>
+    <string name="exit_confirmation">Are you sure you want to exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="retry">Retry</string>
+    <string name="offline_title">No Internet Connection</string>
+    <string name="offline_desc">Please check your network settings and try again.</string>
+</resources>
