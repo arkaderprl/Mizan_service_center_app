@@ -183,19 +183,19 @@ fun WebViewScreen(
         topBar = {
             CenterAlignedTopAppBar(
                 modifier = Modifier
-                    .shadow(if (scrollBehavior.state.overlappedFraction > 0) 4.dp else 0.dp)
-                    .height(56.dp),
+                    .shadow(if (scrollBehavior.state.overlappedFraction > 0) 4.dp else 0.dp),
                 title = { 
                     Text(
                         "Mizan Service Center",
+                        maxLines = 1,
                         style = MaterialTheme.typography.titleMedium.copy(
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 18.sp
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = 17.sp
                         )
                     )
                 },
                 navigationIcon = {
-                    Box(modifier = Modifier.padding(start = 12.dp)) {
+                    Box(modifier = Modifier.padding(start = 16.dp), contentAlignment = Alignment.Center) {
                         Image(
                             painter = painterResource(id = R.drawable.ic_logo), 
                             contentDescription = "Logo",
@@ -204,13 +204,21 @@ fun WebViewScreen(
                     }
                 },
                 actions = {
-                    IconButton(onClick = { navController.navigate("settings") }) {
-                        Icon(Icons.Default.Settings, contentDescription = "Settings")
+                    IconButton(
+                        onClick = { navController.navigate("settings") },
+                        modifier = Modifier.padding(end = 4.dp)
+                    ) {
+                        Icon(
+                            Icons.Default.Settings, 
+                            contentDescription = "Settings", 
+                            modifier = Modifier.size(24.dp)
+                        )
                     }
                 },
                 scrollBehavior = scrollBehavior,
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.95f)
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    scrolledContainerColor = MaterialTheme.colorScheme.surface
                 )
             )
         },
