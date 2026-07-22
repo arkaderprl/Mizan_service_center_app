@@ -28,7 +28,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.google.firebase.messaging.FirebaseMessaging
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -55,26 +54,7 @@ fun SettingsScreen(navController: NavController) {
                 .padding(padding)
                 .padding(16.dp)
         ) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 8.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text("Enable Notifications", modifier = Modifier.weight(1f))
-                Switch(
-                    checked = notificationsEnabled,
-                    onCheckedChange = { 
-                        notificationsEnabled = it 
-                        if (it) {
-                            FirebaseMessaging.getInstance().subscribeToTopic("all")
-                        } else {
-                            FirebaseMessaging.getInstance().unsubscribeFromTopic("all")
-                        }
-                    }
-                )
-            }
-            
+
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
