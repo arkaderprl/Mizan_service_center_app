@@ -1,27 +1,20 @@
 workflows:
   android-workflow:
-    name: Android Release Build
+    name: Android Debug Build
     instance_type: mac_mini_m1
     max_build_duration: 60
     environment:
-      android_signing:
-        - keystore_reference # Ensure you set up your keystore in Codemagic UI
       java: 17
     scripts:
       - name: Set up local.properties
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
-      - name: Build Android release APK
+      - name: Build Android debug APK
         script: |
           chmod +x ./gradlew
-          ./gradlew assembleRelease
-      - name: Build Android release AAB
-        script: |
-          chmod +x ./gradlew
-          ./gradlew bundleRelease
+          ./gradlew assembleDebug
     artifacts:
-      - app/build/outputs/apk/release/*.apk
-      - app/build/outputs/bundle/release/*.aab
+      - app/build/outputs/apk/debug/*.apk
     publishing:
       email:
         recipients:
