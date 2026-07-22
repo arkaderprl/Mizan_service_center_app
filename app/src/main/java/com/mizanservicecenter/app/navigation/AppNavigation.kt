@@ -41,12 +41,15 @@ fun AppNavigation(activity: FragmentActivity) {
     if (isAuthenticated) {
         NavHost(
             navController = navController,
-            startDestination = "home",
+            startDestination = "splash",
             enterTransition = { slideIntoContainer(AnimatedContentTransitionScope.SlideDirection.Left, animationSpec = tween(300)) },
             exitTransition = { slideOutOfContainer(AnimatedContentTransitionScope.SlideDirection.Left, animationSpec = tween(300)) },
             popEnterTransition = { slideIntoContainer(AnimatedContentTransitionScope.SlideDirection.Right, animationSpec = tween(300)) },
             popExitTransition = { slideOutOfContainer(AnimatedContentTransitionScope.SlideDirection.Right, animationSpec = tween(300)) }
         ) {
+            composable("splash") {
+                com.mizanservicecenter.app.ui.screens.AnimatedSplashScreen(navController = navController)
+            }
             composable("home") {
                 WebViewScreen(url = "https://mizanservicecenter.store", navController = navController)
             }
