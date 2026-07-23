@@ -23,6 +23,8 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.Image
@@ -423,13 +425,16 @@ fun WebViewScreen(
             )
 
             // Lottie Loading Animation over the WebView
-            if (isLoading && isConnected && !hasError && !pullToRefreshState.isRefreshing) {
+            AnimatedVisibility(
+                visible = isLoading && isConnected && !hasError && !pullToRefreshState.isRefreshing,
+                enter = fadeIn(animationSpec = tween(300)),
+                exit = fadeOut(animationSpec = tween(300)),
+                modifier = Modifier.fillMaxSize()
+            ) {
                 // Using a premium loading animation from a generic loading Lottie
                 val composition by rememberLottieComposition(LottieCompositionSpec.Url("https://assets9.lottiefiles.com/packages/lf20_p8bfn5to.json"))
                 Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(MaterialTheme.colorScheme.background.copy(alpha = 0.5f)),
+                    modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
                     LottieAnimation(

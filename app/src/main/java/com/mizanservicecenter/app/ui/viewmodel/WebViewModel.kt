@@ -36,6 +36,9 @@ class WebViewModel(application: Application) : AndroidViewModel(application) {
 
     fun setProgress(progress: Int) {
         _loadingProgress.value = progress / 100f
+        if (progress == 100) {
+            _isLoading.value = false
+        }
     }
 
     fun setTitle(title: String) {
